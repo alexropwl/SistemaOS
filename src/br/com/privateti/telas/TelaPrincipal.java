@@ -40,7 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mancadcli = new javax.swing.JMenuItem();
         mancados = new javax.swing.JMenuItem();
         mancaduser = new javax.swing.JMenuItem();
-        manrelser = new javax.swing.JMenu();
+        manrel = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         manajuda = new javax.swing.JMenu();
         manajudaso = new javax.swing.JMenuItem();
@@ -49,7 +49,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Private OS - Principal");
-        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -93,14 +92,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menu.add(mencad);
 
-        manrelser.setText("Relatório");
-        manrelser.setEnabled(false);
+        manrel.setText("Relatório");
+        manrel.setEnabled(false);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Serviços");
-        manrelser.add(jMenuItem4);
+        manrel.add(jMenuItem4);
 
-        menu.add(manrelser);
+        menu.add(manrel);
 
         manajuda.setText("Ajuda");
 
@@ -239,7 +238,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lbldata;
-    private javax.swing.JLabel lblusuario;
+    public static javax.swing.JLabel lblusuario;
     private javax.swing.JMenu manajuda;
     private javax.swing.JMenuItem manajudaso;
     private javax.swing.JMenuItem mancadcli;
@@ -247,7 +246,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenuItem mancaduser;
     private javax.swing.JMenu manop;
     private javax.swing.JMenuItem manopsair;
-    public static javax.swing.JMenu manrelser;
+    public static javax.swing.JMenu manrel;
     private javax.swing.JMenu mencad;
     private javax.swing.JMenuBar menu;
     // End of variables declaration//GEN-END:variables

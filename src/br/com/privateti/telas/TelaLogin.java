@@ -7,6 +7,7 @@ package br.com.privateti.telas;
 
 import java.sql.*;
 import br.com.privateti.dao.ModuloConexao;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +24,7 @@ public class TelaLogin extends javax.swing.JFrame {
         
         String sql = "SELECT * FROM tbusuarios where usuario = ? and senha = ?";
         
+        
         try {
             
             pst = conexao.prepareStatement(sql);
@@ -33,11 +35,27 @@ public class TelaLogin extends javax.swing.JFrame {
             
             if (rs.next()) {
                 
+                String perfil = rs.getString(6);
+                                
+                if(perfil.equals("admin")){
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
+                principal.manrel.setEnabled(true);
+                principal.mancaduser.setEnabled(true);
+                principal.lblusuario.setText(rs.getString(2));
+                principal.lblusuario.setForeground(Color.red);
+                 this.dispose();
+                conexao.close();
+                }     
+                else{
+                TelaPrincipal principal = new TelaPrincipal();
+                principal.setVisible(true);
+                 principal.lblusuario.setText(rs.getString(2));
                 this.dispose();
                 conexao.close();
                 
+                }
+                               
                 
             } else {
                 
